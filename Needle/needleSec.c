@@ -36,7 +36,7 @@ int cross_line(struct Needle needle, struct Floor floor){
 
 int main(int argc, char* argv[]){
 
-    int nb_tosses = 100000000;
+    int nb_tosses = atoi(argv[1]);
 
     srand(time(NULL));
     double L = 1;
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]){
            ((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) -
            ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec));
 
-    //printf("%f\n", (double)nb_tosses / nb_crosses);
+    //printf("%f\n", 2 * L / (((double) nb_crosses/ nb_tosses) * floor.l));
 
     return 0;
 }
